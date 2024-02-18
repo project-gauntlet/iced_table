@@ -17,6 +17,9 @@ members = [
 ]
 
 [dependencies]
-iced_core = "0.12"
-iced_style = "0.12"
-iced_widget = "0.12"
+#iced_core = "0.12"
+#iced_style = "0.12"
+#iced_widget = "0.12"
+iced_core = { git = "https://github.com/project-gauntlet/iced.git", branch = "gauntlet" }
+iced_style = { git = "https://github.com/project-gauntlet/iced.git", branch = "gauntlet" }
+iced_widget = { git = "https://github.com/project-gauntlet/iced.git", branch = "gauntlet" }
