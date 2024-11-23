@@ -20,8 +20,10 @@ members = [
 __docs = ["iced_widget/lazy"]
 
 [dependencies]
-iced_core = "0.13"
-iced_widget = "0.13"
+#iced_core = "0.13"
+#iced_widget = "0.13"
+iced_core = { git = "https://github.com/project-gauntlet/iced.git", branch = "gauntlet-0.13" }
+iced_widget = { git = "https://github.com/project-gauntlet/iced.git", branch = "gauntlet-0.13" }
 
 [package.metadata.docs.rs]
 all-features = true
