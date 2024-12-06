@@ -5,6 +5,7 @@ use iced::widget::{
     text_input,
 };
 use iced::{Element, Length, Renderer, Task, Theme};
+use iced::id::Id;
 use iced_table::table;
 
 fn main() {
@@ -32,9 +33,9 @@ enum Message {
 struct App {
     columns: Vec<Column>,
     rows: Vec<Row>,
-    header: scrollable::Id,
-    body: scrollable::Id,
-    footer: scrollable::Id,
+    header: Id,
+    body: Id,
+    footer: Id,
     resize_columns_enabled: bool,
     footer_enabled: bool,
     min_width_enabled: bool,
@@ -52,9 +53,9 @@ impl Default for App {
                 Column::new(ColumnKind::Delete),
             ],
             rows: (0..50).map(Row::generate).collect(),
-            header: scrollable::Id::unique(),
-            body: scrollable::Id::unique(),
-            footer: scrollable::Id::unique(),
+            header: Id::unique(),
+            body: Id::unique(),
+            footer: Id::unique(),
             resize_columns_enabled: true,
             footer_enabled: true,
             min_width_enabled: true,

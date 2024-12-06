@@ -9,6 +9,7 @@ mod style;
 pub mod table {
     //! Display rows of data into columns
     use iced_core::{Element, Length, Padding};
+    use iced_core::id::Id;
     use iced_widget::{column, container, row, scrollable, Space};
 
     use super::divider::Divider;
@@ -21,8 +22,8 @@ pub mod table {
     /// the body scrollable. It is up to the consumer to emit a [`scroll_to`](iced_widget::scrollable::scroll_to) operation
     /// from `update` when this message is received.
     pub fn table<'a, Column, Row, Message, Theme>(
-        header: scrollable::Id,
-        body: scrollable::Id,
+        header: Id,
+        body: Id,
         columns: &'a [Column],
         rows: &'a [Row],
         on_sync: fn(scrollable::AbsoluteOffset) -> Message,
@@ -86,9 +87,9 @@ pub mod table {
     where
         Theme: style::Catalog + container::Catalog,
     {
-        header: scrollable::Id,
-        body: scrollable::Id,
-        footer: Option<scrollable::Id>,
+        header: Id,
+        body: Id,
+        footer: Option<Id>,
         columns: &'a [Column],
         rows: &'a [Row],
         on_sync: fn(scrollable::AbsoluteOffset) -> Message,
@@ -127,7 +128,7 @@ pub mod table {
         }
 
         /// Show the footer returned by [`Column::footer`].
-        pub fn footer(self, footer: scrollable::Id) -> Self {
+        pub fn footer(self, footer: Id) -> Self {
             Self {
                 footer: Some(footer),
                 ..self
