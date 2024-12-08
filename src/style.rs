@@ -191,7 +191,7 @@ pub(crate) mod wrapper {
 
             let style = appearance
                 .text_color
-                .map(|text_color| iced_core::renderer::Style { icon_color: style.icon_color, text_color, scale_factor: style.scale_factor })
+                .map(|text_color| iced_core::renderer::Style { text_color })
                 .unwrap_or(*style);
 
             self.content
@@ -211,8 +211,8 @@ pub(crate) mod wrapper {
             self.content.as_widget().children()
         }
 
-        fn diff(&mut self, tree: &mut iced_core::widget::Tree) {
-            self.content.as_widget_mut().diff(tree)
+        fn diff(&self, tree: &mut iced_core::widget::Tree) {
+            self.content.as_widget().diff(tree)
         }
 
         fn operate(

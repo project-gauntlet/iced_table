@@ -5,4 +5,4 @@ edition = "2021"
 
 [dependencies]
 iced_table = { path = "../" }
-iced = { git = "https://github.com/project-gauntlet/iced.git", branch = "gauntlet-0.13", features = ["lazy", "winit"] }
+iced = { version = "0.13", features = ["lazy"] }
